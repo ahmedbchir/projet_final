@@ -4,7 +4,6 @@ import hero from '../assets/floor.jpg';
 import { FaAngleDown } from 'react-icons/fa';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import AboutHome from '../components/AboutHome';
 
 const Home = () => {
     return (
@@ -26,15 +25,14 @@ const Home = () => {
                     </h1>
                 </div>
                     <button 
-                    className="next-btn" 
+                    className="next-btn"
                     aria-label="Discover Fit Art"
                     onClick = {()=>document.getElementById('about').scrollIntoView()}>
                         <FaAngleDown/>
                     </button>
             </header>
             <div id="about">
-                <AboutHome />
-            </div>
+²            </div>
             <Footer />
         </main>
     )

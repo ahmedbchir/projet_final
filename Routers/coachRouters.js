@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Coach = require('../Models/coachSchema')
 const {coach}= require('../controllers/coach')
-
+const authMiddleware= require('../middlewares/authMiddlewares')
 //ADD
-router.post("/addCoach",authMiddleware,coach)
+// router.post("/addCoach",authMiddleware,coach)
 
 //UPDATE
 router.put("/:id", async (req, res) => {

@@ -3,9 +3,17 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import { AddUser } from "../store";
+import { useDispatch } from "react-redux";
 
 const Auth = () => {
   const [hasAccount, setHasAccount] = useState(true);
+  const dispatchor= useDispatch()
+  function handleRegister (user) {
+
+    dispatchor(AddUser(user))
+  }
+  
 
   return (
     <main>
@@ -20,7 +28,7 @@ const Auth = () => {
             ></span>
           }
         </button>
-        {hasAccount ? <SignIn/> : <SignUp/>}
+        {hasAccount ? <SignIn/> : <SignUp register={handleRegister}/>}
         
       </div>
       <Footer />
