@@ -8,51 +8,50 @@ import {FaSortAmountDown} from 'react-icons/fa';
 const FitArmy = () => {
     const PER_PAGE = 5;
     const [review, setReview] = useState(useContext(ReviewContext));
-    console.log(review);
     const [sorted, setSorted] = useState(false);
     const [currentPage, setCurrentPage] = useState(0); 
     const [prevPage, setPrevPage] = useState(null); 
     const [nextPage, setNextPage] = useState(1); 
     const [currentData, setCurrentData] = useState(review.slice(prevPage*PER_PAGE,nextPage*PER_PAGE));
     
-    useEffect(()=>{
-        setCurrentData(review.slice(prevPage*PER_PAGE ,nextPage*PER_PAGE)) ;
-    },[prevPage, nextPage, sorted, review]);
+    // useEffect(()=>{
+    //     setCurrentData(review.slice(prevPage*PER_PAGE ,nextPage*PER_PAGE)) ;
+    // },[prevPage, nextPage, sorted, review]);
 
-    const goToPrevious = () =>{
-        if(prevPage>0){
-            setPrevPage(prevPage - 1)
-            setNextPage(nextPage -1)
-            setCurrentPage(currentPage - 1)
-        }
-    }
+    // const goToPrevious = () =>{
+    //     if(prevPage>0){
+    //         setPrevPage(prevPage - 1)
+    //         setNextPage(nextPage -1)
+    //         setCurrentPage(currentPage - 1)
+    //     }
+    // }
 
-    const goToNext = () =>{
-        if(nextPage<5){
-            setPrevPage(prevPage + 1)
-            setNextPage(nextPage + 1)
-            setCurrentPage(currentPage + 1)
-        }
-    }
+    // const goToNext = () =>{
+    //     if(nextPage<5){
+    //         setPrevPage(prevPage + 1)
+    //         setNextPage(nextPage + 1)
+    //         setCurrentPage(currentPage + 1)
+    //     }
+    // }
 
-    const sortByRating = () =>{
-        setSorted(!sorted);
-        setReview(review.sort((a,b)=>{
-            return b.rating - a.rating; 
-        }))
-    }
+    // const sortByRating = () =>{
+    //     setSorted(!sorted);
+    //     setReview(review.sort((a,b)=>{
+    //         return b.rating - a.rating; 
+    //     }))
+    // }
 
-    const sortByDate = () =>{
-        setSorted(!sorted);
-        setReview(review.sort((a,b)=>{
-            return b.date - a.date; 
-        }))
-    }
+    // const sortByDate = () =>{
+    //     setSorted(!sorted);
+    //     setReview(review.sort((a,b)=>{
+    //         return b.date - a.date; 
+    //     }))
+    // }
     
     return (
         <main>
             <Navbar />
-            <div className="fit-army-container">
+            {/* <div className="fit-army-container">
                 <section className="fit-army-hero">
                     <div className="fit-text">
                         <span className="fit-header">
@@ -86,7 +85,7 @@ const FitArmy = () => {
                    </div>
                    </section>
                 </section>
-            </div>
+            </div> */}
             <Footer />
         </main>
     )
